@@ -127,12 +127,12 @@ Silver,192,192,192,False
 Sky Blue,135,206,235,False
 Slate Blue,106,90,205,False
 Slate Gray,112,128,144,False
-Snow,255,250,250,True
+Snow,255,250,250,False
 Spring Green,0,255,127,False
 Steel Blue,70,130,180,False
 Tan,210,180,140,False
 Teal,0,128,128,False
-Thistle,216,191,216,False
+Thistle,216,191,216,True
 Tomato,255,99,71,False
 Turquoise,64,224,208,False
 Violet,238,130,238,False
