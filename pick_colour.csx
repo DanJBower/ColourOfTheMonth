@@ -36,6 +36,15 @@ File.WriteAllText("colours.csv", newCsv.ToString());
 
 WriteLine(selectedColour);
 
+var gitHubOutputPath = Environment.GetEnvironmentVariable("GITHUB_OUTPUT");
+
+if (!string.IsNullOrEmpty(gitHubOutputPath))
+{
+    var output = $"selected_colour={selectedColour.Name}";
+    WriteLine($"Setting output: {output}");
+    File.AppendAllLines(gitHubOutputPath, [output]);
+}
+
 record Colour
 {
     public string Name { get; set; }

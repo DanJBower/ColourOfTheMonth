@@ -20,8 +20,11 @@ jobs:
               run: dotnet tool restore
 
             - name: Update
+              id: color_selector
               run: dotnet dotnet-script pick_colour.csx
 
             - name: Commit
+              env:
+                  SELECTED_COLOR: ${{ steps.color-selector.outputs.selected_colour }}
               run: |
-                  echo Updating colour for $(date +%B) $(date +%Y)
+                  echo Colour of the month $(date +%B) $(date +%Y): $SELECTED_COLOR
