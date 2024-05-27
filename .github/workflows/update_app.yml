@@ -1,0 +1,16 @@
+name: Monthly Colour Update
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+    UpdateColour:
+        name: Update App
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4.1.6
+
+            - name: Update
+              run: echo Updating app!
