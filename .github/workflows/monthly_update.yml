@@ -30,8 +30,8 @@ jobs:
             - name: Set month and year
               id: set_date
               run: |
-                  echo "month=$(date +'%B')" >> $GITHUB_ENV
-                  echo "year=$(date +'%Y')" >> $GITHUB_ENV
+                  echo "month=$(date +'%B')" >> $GITHUB_OUTPUT
+                  echo "year=$(date +'%Y')" >> $GITHUB_OUTPUT
 
             - uses: planetscale/ghcommit-action@v0.1.39
               env:
