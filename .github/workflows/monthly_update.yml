@@ -25,6 +25,6 @@ jobs:
 
             - name: Commit
               env:
-                  SELECTED_COLOR: ${{ steps.color-selector.outputs.selected_colour }}
+                  SELECTED_COLOR: ${{ steps.color_selector.outputs.selected_colour }}
               run: |
                   echo Colour of the month $(date +%B) $(date +%Y): $SELECTED_COLOR
