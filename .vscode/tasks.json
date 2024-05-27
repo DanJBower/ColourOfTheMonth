@@ -1,0 +1,55 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Pick New Colour",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "dotnet-script",
+                "pick_colour.csx"
+            ]
+        },
+        {
+            "label": "Clean",
+            "type": "process",
+            "command": "git",
+            "args": [
+                "clean",
+                "-f",
+                "-d",
+                "-X"
+            ]
+        },
+        {
+            "label": "Remove Incorrectly Tracked Files",
+            "command": "git rm -r --cached .; git add .",
+            "type": "shell"
+        },
+        {
+            "label": "Use Repo Githooks",
+            "type": "process",
+            "command": "git",
+            "args": [
+                "config",
+                "core.hooksPath",
+                ".githooks"
+            ]
+        },
+        {
+            "label": "Use VSCode as Git Editor",
+            "type": "process",
+            "command": "git",
+            "args": [
+                "config",
+                "core.editor",
+                "code --wait"
+            ]
+        },
+        {
+            "label": "Commit All",
+            "command": "git add -A; git commit",
+            "type": "shell"
+        }
+    ]
+}

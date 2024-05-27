@@ -16,7 +16,7 @@
     "debug.console.collapseIdenticalLines": false,
     "diffviewer.drawFileList": false,
     "diffviewer.outputFormat": "side-by-side",
-    "terminal.integrated.scrollback": 1000000,
+    "dotnet.server.useOmnisharp": true,
     "editor.bracketPairColorization.enabled": true,
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
@@ -36,11 +36,11 @@
         "no-inline-html": false
     },
     "scm.defaultViewMode": "tree",
-    "todohighlight.isEnable": false,
+    "terminal.integrated.scrollback": 1000000,
     "todo-tree.general.tags": [
-        "WARN",
         "FIXME",
-        "TODO"
+        "TODO",
+        "WARN"
     ],
     "todo-tree.highlights.customHighlight": {
         "FIXME": {
@@ -48,7 +48,7 @@
             "foreground": "#ffffff",
             "gutterIcon": true,
             "iconColour": "#ffd000",
-            "type": "tag",
+            "type": "tag"
         },
         "TODO": {
             "background": "#d36b03",
@@ -56,7 +56,7 @@
             "gutterIcon": true,
             "icon": "check",
             "iconColour": "#3cff00",
-            "type": "tag",
+            "type": "tag"
         },
         "WARN": {
             "background": "#860303",
@@ -64,8 +64,9 @@
             "gutterIcon": true,
             "icon": "alert",
             "iconColour": "#ff0000",
-            "type": "tag",
+            "type": "tag"
         }
     },
+    "todohighlight.isEnable": false,
     "trailing-spaces.trimOnSave": true
 }
