@@ -1,144 +1,143 @@
-Name,R,G,B,Selected
-Alice Blue,240,248,255,false
-Antique White,250,235,215,false
-Aqua,0,255,255,false
-Aquamarine,127,255,212,false
-Azure,240,255,255,false
-Beige,245,245,220,false
-Bisque,255,228,196,false
-Black,0,0,0,false
-Blanched Almond,255,235,205,false
-Blue,0,0,255,false
-Blue Violet,138,43,226,false
-Brown,165,42,42,false
-Burly Wood,222,184,135,false
-Cadet Blue,95,158,160,false
-Chartreuse,127,255,0,false
-Chocolate,210,105,30,false
-Coral,255,127,80,false
-Cornflower Blue,100,149,237,false
-Cornsilk,255,248,220,false
-Crimson,220,20,60,false
-Cyan,0,255,255,false
-Dark Blue,0,0,139,false
-Dark Cyan,0,139,139,false
-Dark Goldenrod,184,134,11,false
-Dark Gray,169,169,169,false
-Dark Green,0,100,0,false
-Dark Khaki,189,183,107,false
-Dark Magenta,139,0,139,false
-Dark Olive Green,85,107,47,false
-Dark Orange,255,140,0,false
-Dark Orchid,153,50,204,false
-Dark Red,139,0,0,false
-Dark Salmon,233,150,122,false
-Dark Sea Green,143,188,139,false
-Dark Slate Blue,72,61,139,false
-Dark Slate Gray,47,79,79,false
-Dark Turquoise,0,206,209,false
-Dark Violet,148,0,211,false
-Deep Pink,255,20,147,false
-Deep Sky Blue,0,191,255,false
-Dim Gray,105,105,105,false
-Dodger Blue,30,144,255,false
-Fire Brick,178,34,34,false
-Floral White,255,250,240,false
-Forest Green,34,139,34,false
-Fuchsia,255,0,255,false
-Gainsboro,220,220,220,false
-Ghost White,248,248,255,false
-Gold,255,215,0,false
-Goldenrod,218,165,32,false
-Gray,128,128,128,false
-Green,0,128,0,false
-Green Yellow,173,255,47,false
-Honey Dew,240,255,240,false
-Hot Pink,255,105,180,false
-Indian Red,205,92,92,false
-Indigo,75,0,130,false
-Ivory,255,255,240,false
-Khaki,240,230,140,false
-Lavender,230,230,250,false
-Lavender Blush,255,240,245,false
-Lawn Green,124,252,0,false
-Lemon Chiffon,255,250,205,false
-Light Blue,173,216,230,false
-Light Coral,240,128,128,false
-Light Cyan,224,255,255,false
-Light Goldenrod Yellow,250,250,210,false
-Light Gray,211,211,211,false
-Light Green,144,238,144,false
-Light Pink,255,182,193,false
-Light Salmon,255,160,122,false
-Light Salmon,255,160,122,false
-Light Sea Green,32,178,170,false
-Light Sky Blue,135,206,250,false
-Light Slate Gray,119,136,153,false
-Light Steel Blue,176,196,222,false
-Light Yellow,255,255,224,false
-Lime,0,255,0,false
-Lime Green,50,205,50,false
-Linen,250,240,230,false
-Magenta,255,0,255,false
-Maroon,128,0,0,false
-Medium Aquamarine,102,205,170,false
-Medium Blue,0,0,205,false
-Medium Orchid,186,85,211,false
-Medium Purple,147,112,219,false
-Medium Sea Green,60,179,113,false
-Medium Slate Blue,123,104,238,false
-Medium Slate Blue,123,104,238,false
-Medium Spring Green,0,250,154,false
-Medium Turquoise,72,209,204,false
-Medium Violet Red,199,21,133,false
-Midnight Blue,25,25,112,false
-Mint Cream,245,255,250,false
-Misty Rose,255,228,225,false
-Moccasin,255,228,181,false
-Navajo White,255,222,173,false
-Navy,0,0,128,false
-Old Lace,253,245,230,false
-Olive,128,128,0,false
-Olive Drab,107,142,35,false
-Orange,255,165,0,false
-Orange Red,255,69,0,false
-Orchid,218,112,214,false
-Pale Goldenrod,238,232,170,false
-Pale Green,152,251,152,false
-Pale Turquoise,175,238,238,false
-Pale Violet Red,219,112,147,false
-Papaya Whip,255,239,213,false
-Peach Puff,255,218,185,false
-Peru,205,133,63,false
-Pink,255,192,203,false
-Plum,221,160,221,false
-Powder Blue,176,224,230,false
-Purple,128,0,128,false
-Rebecca Purple,102,51,153,false
-Red,255,0,0,false
-Rosy Brown,188,143,143,false
-Royal Blue,65,105,225,false
-Saddle Brown,139,69,19,false
-Salmon,250,128,114,false
-Sandy Brown,244,164,96,false
-Sea Green,46,139,87,false
-Sea Shell,255,245,238,false
-Sienna,160,82,45,false
-Silver,192,192,192,false
-Sky Blue,135,206,235,false
-Slate Blue,106,90,205,false
-Slate Gray,112,128,144,false
-Snow,255,250,250,false
-Spring Green,0,255,127,false
-Steel Blue,70,130,180,false
-Tan,210,180,140,false
-Teal,0,128,128,false
-Thistle,216,191,216,false
-Tomato,255,99,71,false
-Turquoise,64,224,208,false
-Violet,238,130,238,false
-Wheat,245,222,179,false
-White,255,255,255,false
-White Smoke,245,245,245,false
-Yellow,255,255,0,false
-Yellow Green,154,205,50,false
+Name,R,G,B,SelectedAlice Blue,240,248,255,False
+Antique White,250,235,215,False
+Aqua,0,255,255,False
+Aquamarine,127,255,212,False
+Azure,240,255,255,False
+Beige,245,245,220,False
+Bisque,255,228,196,False
+Black,0,0,0,False
+Blanched Almond,255,235,205,False
+Blue,0,0,255,False
+Blue Violet,138,43,226,False
+Brown,165,42,42,False
+Burly Wood,222,184,135,False
+Cadet Blue,95,158,160,False
+Chartreuse,127,255,0,False
+Chocolate,210,105,30,False
+Coral,255,127,80,False
+Cornflower Blue,100,149,237,False
+Cornsilk,255,248,220,False
+Crimson,220,20,60,False
+Cyan,0,255,255,False
+Dark Blue,0,0,139,False
+Dark Cyan,0,139,139,False
+Dark Goldenrod,184,134,11,False
+Dark Gray,169,169,169,False
+Dark Green,0,100,0,False
+Dark Khaki,189,183,107,False
+Dark Magenta,139,0,139,False
+Dark Olive Green,85,107,47,False
+Dark Orange,255,140,0,False
+Dark Orchid,153,50,204,False
+Dark Red,139,0,0,False
+Dark Salmon,233,150,122,False
+Dark Sea Green,143,188,139,False
+Dark Slate Blue,72,61,139,False
+Dark Slate Gray,47,79,79,False
+Dark Turquoise,0,206,209,False
+Dark Violet,148,0,211,False
+Deep Pink,255,20,147,False
+Deep Sky Blue,0,191,255,False
+Dim Gray,105,105,105,False
+Dodger Blue,30,144,255,False
+Fire Brick,178,34,34,False
+Floral White,255,250,240,False
+Forest Green,34,139,34,False
+Fuchsia,255,0,255,False
+Gainsboro,220,220,220,False
+Ghost White,248,248,255,False
+Gold,255,215,0,False
+Goldenrod,218,165,32,False
+Gray,128,128,128,False
+Green,0,128,0,False
+Green Yellow,173,255,47,False
+Honey Dew,240,255,240,False
+Hot Pink,255,105,180,False
+Indian Red,205,92,92,False
+Indigo,75,0,130,False
+Ivory,255,255,240,False
+Khaki,240,230,140,False
+Lavender,230,230,250,False
+Lavender Blush,255,240,245,False
+Lawn Green,124,252,0,False
+Lemon Chiffon,255,250,205,False
+Light Blue,173,216,230,False
+Light Coral,240,128,128,False
+Light Cyan,224,255,255,False
+Light Goldenrod Yellow,250,250,210,False
+Light Gray,211,211,211,False
+Light Green,144,238,144,False
+Light Pink,255,182,193,False
+Light Salmon,255,160,122,False
+Light Salmon,255,160,122,False
+Light Sea Green,32,178,170,False
+Light Sky Blue,135,206,250,False
+Light Slate Gray,119,136,153,False
+Light Steel Blue,176,196,222,False
+Light Yellow,255,255,224,False
+Lime,0,255,0,False
+Lime Green,50,205,50,False
+Linen,250,240,230,False
+Magenta,255,0,255,False
+Maroon,128,0,0,False
+Medium Aquamarine,102,205,170,False
+Medium Blue,0,0,205,False
+Medium Orchid,186,85,211,False
+Medium Purple,147,112,219,False
+Medium Sea Green,60,179,113,False
+Medium Slate Blue,123,104,238,False
+Medium Slate Blue,123,104,238,False
+Medium Spring Green,0,250,154,False
+Medium Turquoise,72,209,204,False
+Medium Violet Red,199,21,133,False
+Midnight Blue,25,25,112,False
+Mint Cream,245,255,250,False
+Misty Rose,255,228,225,False
+Moccasin,255,228,181,False
+Navajo White,255,222,173,False
+Navy,0,0,128,False
+Old Lace,253,245,230,False
+Olive,128,128,0,False
+Olive Drab,107,142,35,False
+Orange,255,165,0,False
+Orange Red,255,69,0,False
+Orchid,218,112,214,False
+Pale Goldenrod,238,232,170,False
+Pale Green,152,251,152,False
+Pale Turquoise,175,238,238,False
+Pale Violet Red,219,112,147,False
+Papaya Whip,255,239,213,False
+Peach Puff,255,218,185,False
+Peru,205,133,63,False
+Pink,255,192,203,False
+Plum,221,160,221,False
+Powder Blue,176,224,230,False
+Purple,128,0,128,False
+Rebecca Purple,102,51,153,False
+Red,255,0,0,False
+Rosy Brown,188,143,143,False
+Royal Blue,65,105,225,False
+Saddle Brown,139,69,19,False
+Salmon,250,128,114,False
+Sandy Brown,244,164,96,False
+Sea Green,46,139,87,False
+Sea Shell,255,245,238,False
+Sienna,160,82,45,False
+Silver,192,192,192,False
+Sky Blue,135,206,235,False
+Slate Blue,106,90,205,False
+Slate Gray,112,128,144,False
+Snow,255,250,250,True
+Spring Green,0,255,127,False
+Steel Blue,70,130,180,False
+Tan,210,180,140,False
+Teal,0,128,128,False
+Thistle,216,191,216,False
+Tomato,255,99,71,False
+Turquoise,64,224,208,False
+Violet,238,130,238,False
+Wheat,245,222,179,False
+White,255,255,255,False
+White Smoke,245,245,245,False
+Yellow,255,255,0,False
+Yellow Green,154,205,50,False

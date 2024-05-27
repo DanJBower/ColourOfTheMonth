@@ -22,6 +22,11 @@
             ]
         },
         {
+            "label": "Make Git Case Sensitive",
+            "command": "git config core.ignorecase false",
+            "type": "shell"
+        },
+        {
             "label": "Remove Incorrectly Tracked Files",
             "command": "git rm -r --cached .; git add .",
             "type": "shell"

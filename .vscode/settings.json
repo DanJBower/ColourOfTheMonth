@@ -12,7 +12,10 @@
         ],
         "editor.wordWrap": "off"
     },
-    "cSpell.words": [],
+    "cSpell.words": [
+        "colour",
+        "colours"
+    ],
     "debug.console.collapseIdenticalLines": false,
     "diffviewer.drawFileList": false,
     "diffviewer.outputFormat": "side-by-side",
