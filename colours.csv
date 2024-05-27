@@ -25,7 +25,7 @@ Dark Goldenrod,184,134,11,False
 Dark Gray,169,169,169,False
 Dark Green,0,100,0,False
 Dark Khaki,189,183,107,False
-Dark Magenta,139,0,139,False
+Dark Magenta,139,0,139,True
 Dark Olive Green,85,107,47,False
 Dark Orange,255,140,0,False
 Dark Orchid,153,50,204,False
@@ -130,7 +130,7 @@ Slate Gray,112,128,144,False
 Snow,255,250,250,False
 Spring Green,0,255,127,False
 Steel Blue,70,130,180,False
-Tan,210,180,140,True
+Tan,210,180,140,False
 Teal,0,128,128,False
 Thistle,216,191,216,False
 Tomato,255,99,71,False
