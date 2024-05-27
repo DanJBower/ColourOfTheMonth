@@ -1,5 +1,7 @@
 # Colour Of The Month
 
+**Credit:** All colour names and colour codes were taken from [HTML COLOR CODES](https://htmlcolorcodes.com/color-names/) on 27/05/2024.
+
 This is a really simple Android app that displays a different colour each month.
 
 The app is automatically kept up to date by a GitHub Actions workflow that runs on the first day of each month.
