@@ -31,11 +31,9 @@ jobs:
                   gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
                   passphrase: ${{ secrets.PASSPHRASE }}
                   git_user_signingkey: true
-                  git_commit_gpgsign: true
 
             - name: Commit
               run: |
-                  git config user.name "github-actions[bot]"
-                  git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-                  git commit -S -am "Colour of the month $(date +%B) $(date +%Y): $SELECTED_COLOR"
+                  git add colours.csv
+                  git commit -S -m "Bot: Colour of the month $(date +%B) $(date +%Y): $SELECTED_COLOR"
                   git push
