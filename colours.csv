@@ -1,6 +1,6 @@
 Name,R,G,B,SelectedAlice Blue,240,248,255,False
 Antique White,250,235,215,False
-Aqua,0,255,255,False
+Aqua,0,255,255,True
 Aquamarine,127,255,212,False
 Azure,240,255,255,False
 Beige,245,245,220,False
@@ -25,7 +25,7 @@ Dark Goldenrod,184,134,11,False
 Dark Gray,169,169,169,False
 Dark Green,0,100,0,False
 Dark Khaki,189,183,107,False
-Dark Magenta,139,0,139,True
+Dark Magenta,139,0,139,False
 Dark Olive Green,85,107,47,False
 Dark Orange,255,140,0,False
 Dark Orchid,153,50,204,False
