@@ -1,4 +1,4 @@
-name: Monthly Colour Update
+name: Update App from main
 
 on:
   push:
