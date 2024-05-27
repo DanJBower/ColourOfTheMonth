@@ -12,8 +12,6 @@ jobs:
         steps:
             - name: Checkout
               uses: actions/checkout@v4.1.6
-              with:
-                  token: ${{ secrets.PAT }}
 
             - name: Setup .NET
               uses: actions/setup-dotnet@v4.0.0
@@ -25,15 +23,20 @@ jobs:
               id: color_selector
               run: dotnet dotnet-script pick_colour.csx
 
-            - name: Import GPG
-              uses: crazy-max/ghaction-import-gpg@v6.1.0
-              with:
-                  gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
-                  passphrase: ${{ secrets.PASSPHRASE }}
-                  git_user_signingkey: true
-
-            - name: Commit
+            - name: Set month and year
+              id: set_date
               run: |
-                  git add colours.csv
-                  git commit -S -m "Bot: Colour of the month $(date +%B) $(date +%Y): $SELECTED_COLOR"
-                  git push
+                  echo "month=$(date +'%B')" >> $GITHUB_ENV
+                  echo "year=$(date +'%Y')" >> $GITHUB_ENV
+
+            - uses: planetscale/ghcommit-action@v0.1.39
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  SELECTED_COLOR: ${{ steps.color_selector.outputs.selected_colour }}
+                  MONTH: ${{ steps.set_date.outputs.month }}
+                  YEAR: ${{ steps.set_date.outputs.year }}
+              with:
+                  commit_message: 'Colour of the month ${{ env.MONTH }} ${{ env.YEAR }}: ${{ env.SELECTED_COLOR }}'
+                  repo: ${{ github.repository }}
+                  branch: ${{ github.head_ref || github.ref_name }}
+                  file_pattern: 'colours.csv'
