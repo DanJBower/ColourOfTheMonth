@@ -40,9 +40,11 @@ var gitHubOutputPath = Environment.GetEnvironmentVariable("GITHUB_OUTPUT");
 
 if (!string.IsNullOrEmpty(gitHubOutputPath))
 {
+    WriteLine($"Initial content: {File.ReadAllText(gitHubOutputPath)}");
     var output = $"selected_colour={selectedColour.Name}";
     WriteLine($"Setting output: {output}");
     File.AppendAllLines(gitHubOutputPath, [output]);
+    WriteLine($"New content: {File.ReadAllText(gitHubOutputPath)}");
 }
 
 record Colour
