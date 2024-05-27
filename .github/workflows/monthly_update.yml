@@ -48,4 +48,4 @@ jobs:
     CallUpdateApp:
         name: Call Update App
         needs: UpdateColour
-        uses: ${{ github.repository }}/.github/workflows/update_app.yml@main
+        uses: ./.github/workflows/update_app.yml@main
