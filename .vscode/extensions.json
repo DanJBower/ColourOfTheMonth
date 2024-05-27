@@ -1,0 +1,15 @@
+{
+    "recommendations": [
+        "Gruntfuggly.todo-tree",
+        "caponetto.vscode-diff-viewer",
+        "davidanson.vscode-markdownlint",
+        "mhutchie.git-graph",
+        "shardulm94.trailing-spaces",
+        "shd101wyy.markdown-preview-enhanced",
+        "spmeesseman.vscode-taskexplorer",
+        "streetsidesoftware.code-spell-checker",
+        "visualstudioexptteam.vscodeintellicode",
+        "vscode-icons-team.vscode-icons",
+        "waderyan.gitblame"
+    ]
+}
