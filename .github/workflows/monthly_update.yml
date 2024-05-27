@@ -39,4 +39,3 @@ jobs:
                   commit_message: 'Colour of the month ${{ env.MONTH }} ${{ env.YEAR }}: ${{ env.SELECTED_COLOR }}'
                   repo: ${{ github.repository }}
                   branch: ${{ github.head_ref || github.ref_name }}
-                  file_pattern: 'colours.csv'
