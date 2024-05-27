@@ -1,6 +1,6 @@
 Name,R,G,B,SelectedAlice Blue,240,248,255,False
 Antique White,250,235,215,False
-Aqua,0,255,255,True
+Aqua,0,255,255,False
 Aquamarine,127,255,212,False
 Azure,240,255,255,False
 Beige,245,245,220,False
@@ -58,7 +58,7 @@ Indigo,75,0,130,False
 Ivory,255,255,240,False
 Khaki,240,230,140,False
 Lavender,230,230,250,False
-Lavender Blush,255,240,245,False
+Lavender Blush,255,240,245,True
 Lawn Green,124,252,0,False
 Lemon Chiffon,255,250,205,False
 Light Blue,173,216,230,False
