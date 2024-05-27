@@ -69,7 +69,7 @@ Light Gray,211,211,211,False
 Light Green,144,238,144,False
 Light Pink,255,182,193,False
 Light Salmon,255,160,122,False
-Light Salmon,255,160,122,True
+Light Salmon,255,160,122,False
 Light Sea Green,32,178,170,False
 Light Sky Blue,135,206,250,False
 Light Slate Gray,119,136,153,False
@@ -130,7 +130,7 @@ Slate Gray,112,128,144,False
 Snow,255,250,250,False
 Spring Green,0,255,127,False
 Steel Blue,70,130,180,False
-Tan,210,180,140,False
+Tan,210,180,140,True
 Teal,0,128,128,False
 Thistle,216,191,216,False
 Tomato,255,99,71,False
