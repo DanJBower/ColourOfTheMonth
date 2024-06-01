@@ -58,7 +58,7 @@ Indigo,75,0,130,False
 Ivory,255,255,240,False
 Khaki,240,230,140,False
 Lavender,230,230,250,False
-Lavender Blush,255,240,245,True
+Lavender Blush,255,240,245,False
 Lawn Green,124,252,0,False
 Lemon Chiffon,255,250,205,False
 Light Blue,173,216,230,False
@@ -87,7 +87,7 @@ Medium Purple,147,112,219,False
 Medium Sea Green,60,179,113,False
 Medium Slate Blue,123,104,238,False
 Medium Slate Blue,123,104,238,False
-Medium Spring Green,0,250,154,False
+Medium Spring Green,0,250,154,True
 Medium Turquoise,72,209,204,False
 Medium Violet Red,199,21,133,False
 Midnight Blue,25,25,112,False
