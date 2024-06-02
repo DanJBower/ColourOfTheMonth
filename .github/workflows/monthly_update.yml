@@ -21,9 +21,9 @@ jobs:
             - name: Echo run info
               id: run_info
               run: |
-                  echo Run ID $env.GITHUB_RUN_ID
-                  echo Run number $env.GITHUB_RUN_NUMBER
-                  echo Run attempt $env.GITHUB_RUN_ATTEMPT
+                  echo Run ID $GITHUB_RUN_ID
+                  echo Run number $GITHUB_RUN_NUMBER
+                  echo Run attempt $GITHUB_RUN_ATTEMPT
 
             - name: Setup .NET
               uses: actions/setup-dotnet@v4.0.0
