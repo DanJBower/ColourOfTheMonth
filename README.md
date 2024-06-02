@@ -33,3 +33,7 @@ I'm not going to lie, I created this app to prevent my Android developer account
   * This card should be surrounded by the colour of that month?
   * Card should be tappable to expand and show the same expanded information
   * Long press will close changelog
+* Version:
+  * Major and minor should be manually maintained
+  * Patch and version code should be automatically maintained and the same as each other
+  * Patch should be GITHUB_RUN_NUMBER * 1000 + GITHUB_RUN_ATTEMPT

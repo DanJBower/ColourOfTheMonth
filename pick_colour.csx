@@ -7,49 +7,69 @@ var colours = colourCsv.Skip(1).Select(line =>
         R = int.Parse(line.Split(',')[1]),
         G = int.Parse(line.Split(',')[2]),
         B = int.Parse(line.Split(',')[3]),
-        Selected = bool.Parse(line.Split(',')[4]),
+    }).ToList();
+var colourDictionary = colours.ToDictionary(colour => colour.Name);
+
+var changelogCsv = File.ReadAllLines("changelog.csv");
+var changelog = changelogCsv.Skip(1).Select(line =>
+    new History
+    {
+        Date = line.Split(',')[0],
+        Colour = colourDictionary[line.Split(',')[1]],
     }).ToList();
 
 Colour selectedColour;
 
-do
+if (changelog.Count == 0)
 {
     selectedColour = colours[random.Next(0, colours.Count)];
-} while (selectedColour.Selected);
-
-foreach (var colour in colours)
+}
+else
 {
-    colour.Selected = false;
+    var lastColour = changelog[0].Colour;
+    do
+    {
+        selectedColour = colours[random.Next(0, colours.Count)];
+    } while (selectedColour == lastColour);
 }
 
-selectedColour.Selected = true;
+var releaseDate = $"{DateTime.Now.AddDays(2):MMMM yyyy}";
 
 StringBuilder newCsv = new();
-newCsv.AppendLine(colourCsv[0]);
+newCsv.AppendLine(changelogCsv[0]);
+// Add days to the current time to avoid issues if script is run in different timezone
+newCsv.AppendLine($"{releaseDate},{selectedColour.Name}");
 
-foreach (var colour in colours)
+foreach (var history in changelog)
 {
-    newCsv.AppendLine($"{colour.Name},{colour.R},{colour.G},{colour.B},{colour.Selected}");
+    newCsv.AppendLine($"{history.Date},{history.Colour.Name}");
 }
 
-File.WriteAllText("colours.csv", newCsv.ToString());
+File.WriteAllText("changelog.csv", newCsv.ToString());
 
-WriteLine(selectedColour);
+WriteLine($"{releaseDate}: {selectedColour}");
 
 var gitHubOutputPath = Environment.GetEnvironmentVariable("GITHUB_OUTPUT");
 
 if (!string.IsNullOrEmpty(gitHubOutputPath))
 {
-    var output = $"selected_colour={selectedColour.Name}";
-    WriteLine($"Setting output: {output}");
-    File.AppendAllLines(gitHubOutputPath, [output]);
+    var colourOutput = $"selected_colour={selectedColour.Name}";
+    var releaseDateOutput = $"release_date={releaseDate}";
+    WriteLine($"Setting output: {colourOutput}");
+    WriteLine($"Setting output: {releaseDateOutput}");
+    File.AppendAllLines(gitHubOutputPath, [colourOutput, releaseDateOutput]);
 }
 
 record Colour
 {
-    public string Name { get; set; }
-    public int R { get; set; }
-    public int G { get; set; }
-    public int B { get; set; }
-    public bool Selected { get; set; }
+    public string Name { get; init; }
+    public int R { get; init; }
+    public int G { get; init; }
+    public int B { get; init; }
+}
+
+record History
+{
+    public string Date { get; init; }
+    public Colour Colour { get; init; }
 }
