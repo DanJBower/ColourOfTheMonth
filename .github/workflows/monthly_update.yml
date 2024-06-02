@@ -10,7 +10,9 @@ jobs:
         name: Update Colour
         runs-on: ubuntu-latest
 
-        permissions: write-all
+        permissions:
+            actions: write
+            contents: write
 
         steps:
             - name: Checkout
@@ -42,3 +44,8 @@ jobs:
                   commit_message: 'Colour of the month ${{ env.RELEASE_DATE }}: ${{ env.SELECTED_COLOR }}'
                   repo: ${{ github.repository }}
                   branch: ${{ github.head_ref || github.ref_name }}
+
+    CallUpdateApp:
+        name: Call Update App
+        needs: UpdateColour
+        uses: ./.github/workflows/update_app.yml

@@ -8,10 +8,6 @@ The app is automatically kept up to date by a GitHub Actions workflow that runs 
 
 I'm not going to lie, I created this app to prevent my Android developer account from getting de-activated 🙂
 
-## FIXME
-
-* Need to fix the pipeline thing so that the commit triggers the main pipeline rather than calling the update pipeline manually as causes issue with build number
-
 ## TODOs
 
 * Create the app using Kotlin and JetPack Compose
@@ -40,4 +36,5 @@ I'm not going to lie, I created this app to prevent my Android developer account
 * Version:
   * Major and minor should be manually maintained
   * Patch and version code should be automatically maintained and the same as each other
-  * Patch should be GITHUB_RUN_NUMBER * 1000 + GITHUB_RUN_ATTEMPT
+  * Patch should be ~~GITHUB_RUN_NUMBER * 1000 + GITHUB_RUN_ATTEMPT~~ -> Turns out won't change when calling other pipeline and commit not triggering on it's own
+  * Instead do (year * 1000000) + (day of year * 1440) + (hour of day * 60) + minute of hour
