@@ -33,11 +33,11 @@ else
     } while (selectedColour == lastColour);
 }
 
+// Add days to the current time to avoid issues if script is run in different timezone
 var releaseDate = $"{DateTime.Now.AddDays(2):MMMM yyyy}";
 
 StringBuilder newCsv = new();
 newCsv.AppendLine(changelogCsv[0]);
-// Add days to the current time to avoid issues if script is run in different timezone
 newCsv.AppendLine($"{releaseDate},{selectedColour.Name}");
 
 foreach (var history in changelog)
