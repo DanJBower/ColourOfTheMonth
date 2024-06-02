@@ -8,6 +8,10 @@ The app is automatically kept up to date by a GitHub Actions workflow that runs 
 
 I'm not going to lie, I created this app to prevent my Android developer account from getting de-activated 🙂
 
+## FIXME
+
+* Need to fix the pipeline thing so that the commit triggers the main pipeline rather than calling the update pipeline manually as causes issue with build number
+
 ## TODOs
 
 * Create the app using Kotlin and JetPack Compose
