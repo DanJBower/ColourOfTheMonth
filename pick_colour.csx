@@ -4,9 +4,7 @@ var colours = colourCsv.Skip(1).Select(line =>
     new Colour
     {
         Name = line.Split(',')[0],
-        R = int.Parse(line.Split(',')[1]),
-        G = int.Parse(line.Split(',')[2]),
-        B = int.Parse(line.Split(',')[3]),
+        Hex = line.Split(',')[1],
     }).ToList();
 var colourDictionary = colours.ToDictionary(colour => colour.Name);
 
@@ -63,9 +61,7 @@ if (!string.IsNullOrEmpty(gitHubOutputPath))
 record Colour
 {
     public string Name { get; init; }
-    public int R { get; init; }
-    public int G { get; init; }
-    public int B { get; init; }
+    public string Hex { get; init; }
 }
 
 record History
