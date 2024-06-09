@@ -8,33 +8,13 @@ The app is automatically kept up to date by a GitHub Actions workflow that runs 
 
 I'm not going to lie, I created this app to prevent my Android developer account from getting de-activated 🙂
 
-## TODOs
+## TODOs for 1.0
 
-* Create the app using Kotlin and JetPack Compose
-* Make it only keep pipeline artifacts for 32 days if possible - in terms of the apk as they can be big
-* Background should be colour of the month
-* Foreground should be a box with text in
-* Initially should contain just the name of the colour and current month
-* Box should have shadow to make it stand out
-* Tapping anywhere on the app screen should expand the box over a second or something to show additional information:
-  * HEX value
-  * RGB value
-  * HSL value
-  * HSV value
-* Text should fade in and out as the box expands and contracts
-* Clip text to box
-* If this animation too complicated, just fade in and out everything
-* Further taps toggle between the two boxes
 * Long press when showing expanded box should show changelog
-* Icon, should be a paint palette with several bits of paint on of the current colour of the month. Use SVG to make this easy to update
 * Change log should be:
   * Wide enough to show a full expanded + padding - Up to 80% width of screen. Min 70% width. Height automatic but test it with a few months to make sure auto scrolls. Stop at 90% height
   * Should be contain a card for each month in history
   * This card should be surrounded by the colour of that month?
   * Card should be tappable to expand and show the same expanded information
   * Long press will close changelog
-* Version:
-  * Major and minor should be manually maintained
-  * Patch and version code should be automatically maintained and the same as each other
-  * Patch should be ~~GITHUB_RUN_NUMBER * 1000 + GITHUB_RUN_ATTEMPT~~ -> Turns out won't change when calling other pipeline and commit not triggering on it's own
-  * Instead do (year * 1000000) + (day of year * 1440) + (hour of day * 60) + minute of hour
+* Implement uploading to Play Store as per job 2 on <https://medium.com/@vontonnie/automating-success-github-actions-workflow-for-android-app-deployment-908095d53b97>
