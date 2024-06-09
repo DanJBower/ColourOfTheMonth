@@ -22,4 +22,5 @@ private void UpdateColour(string path, string colour)
         .Where(e => e.Name.LocalName == "path" && (string)e.Attribute(androidNs + "name") == path)
         .First();
     pathElement.SetAttributeValue(androidNs + "fillColor", colour);
+    WriteLine($"Setting: {path} to {colour}");
 }

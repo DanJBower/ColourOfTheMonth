@@ -9,7 +9,7 @@
             "args": [
                 "exec",
                 "${env:USERPROFILE}/.nuget/packages/dotnet-script/1.5.0/tools/net8.0/any/dotnet-script.dll",
-                "update_icon.csx"
+                "${file}"
             ],
             "cwd": "${workspaceRoot}",
             "console": "integratedTerminal",
