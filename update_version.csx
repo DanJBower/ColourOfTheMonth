@@ -1,6 +1,5 @@
-const string VersionPath = @"ColourOfTheMonth\app\build.gradle.kts";
+readonly string VersionPath = Path.Combine("ColourOfTheMonth", "app", "build.gradle.kts");
 var lines = File.ReadAllLines(VersionPath);
-
 
 DateTime now = DateTime.Now;
 DateTime startOfYear = new DateTime(now.Year, 1, 1);

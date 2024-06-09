@@ -2,7 +2,7 @@
 
 using System.Xml.Linq;
 
-const string IconPath = @"ColourOfTheMonth\app\src\main\res\drawable\icon.xml";
+readonly string IconPath = Path.Combine("ColourOfTheMonth", "app", "src", "main", "res", "drawable", "icon.xml");
 
 XDocument xmlDocument = XDocument.Load(IconPath);
 
