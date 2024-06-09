@@ -2,17 +2,23 @@ package com.danjbower.colourofthemonth.model
 
 import com.danjbower.colourofthemonth.data.Colour
 import com.danjbower.colourofthemonth.data.History
-import java.io.File
 
 class ColourOfTheMonthModel
 {
-    private val colours : List<Colour> = parseColourList()
-    val changelog : List<History> = parseChangelog()
-    val currentColour = changelog[0]
+    private val colours : List<Colour>
+    val changelog : List<History>
+    val currentChange: History
 
-    fun parseColourList(): List<Colour>
+    constructor(colourLines: List<String>, changelogLines: List<String>)
     {
-        return File("colours.csv").readLines()
+        colours = parseColourList(colourLines)
+        changelog = parseChangelog(changelogLines)
+        currentChange = changelog[0]
+    }
+
+    fun parseColourList(lines: List<String>): List<Colour>
+    {
+        return lines
             .drop(1)
             .map {line ->
                 val lineInfo = line.split(",")
@@ -20,9 +26,9 @@ class ColourOfTheMonthModel
             }
     }
 
-    fun parseChangelog(): List<History>
+    fun parseChangelog(lines: List<String>): List<History>
     {
-        return File("colours.csv").readLines()
+        return lines
             .drop(1)
             .map {line ->
                 val lineInfo = line.split(",")

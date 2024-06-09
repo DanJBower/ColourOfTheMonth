@@ -1,65 +1,25 @@
 package com.danjbower.colourofthemonth
 
-import android.content.res.Configuration
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.danjbower.colourofthemonth.ui.theme.ColourOfTheMonthTheme
+import com.danjbower.colourofthemonth.model.ColourOfTheMonthModel
+import com.danjbower.colourofthemonth.utility.readFileFromAssets
+import com.danjbower.colourofthemonth.view.ColourOfTheMonth
+import com.danjbower.colourofthemonth.viewmodel.ColourOfTheMonthViewModel
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            MainContent()
-        }
-    }
-}
-
-/*@Preview(
-    name = "Light Mode",
-    uiMode = Configuration.UI_MODE_NIGHT_NO or Configuration.UI_MODE_TYPE_NORMAL
-)*/
-@Preview(
-    name = "Dark Mode",
-    uiMode = Configuration.UI_MODE_NIGHT_YES or Configuration.UI_MODE_TYPE_NORMAL
-)
-@Composable
-fun MainContent()
-{
-    ColourOfTheMonthTheme {
-        Surface(modifier = Modifier.fillMaxSize()) {
-            MessageCard(
-                msg = Message("Android", "Jetpack Compose"),
+            val model = ColourOfTheMonthModel(
+                readFileFromAssets(this, "colours.txt"),
+                readFileFromAssets(this, "changelog.txt"),
             )
+            val viewModel = ColourOfTheMonthViewModel(model)
+            ColourOfTheMonth(viewModel)
         }
-    }
-}
-
-data class Message(val author: String, val body: String)
-
-@Composable
-fun MessageCard(msg: Message) {
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally,
-    ) {
-        Text(
-            text = msg.author,
-            color = MaterialTheme.colorScheme.secondary,
-        )
-        Text(text = msg.body)
     }
 }
