@@ -10,6 +10,12 @@ record History
     public Colour Colour { get; init; }
 }
 
+foreach (var path in Directory.GetFiles(Directory.GetCurrentDirectory()))
+{
+    Console.WriteLine(path); // full path
+    Console.WriteLine(System.IO.Path.GetFileName(path)); // file name
+}
+
 const string ChangelogPath = @"ColourOfTheMonth\app\src\main\assets\changelog.csv";
 const string ColoursPath = @"ColourOfTheMonth\app\src\main\assets\colours.csv";
 
