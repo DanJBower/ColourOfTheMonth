@@ -42,7 +42,9 @@ jobs:
                 gradle-home-cache-cleanup: true
 
             - name: Build AAB
-              run: ColourOfTheMonth/gradlew bundleRelease
+              run: |
+                cd ColourOfTheMonth
+                ./gradlew bundleRelease
 
             - name: Sign AAB
               uses: r0adkll/sign-android-release@v1
@@ -62,7 +64,9 @@ jobs:
                 retention-days: 32
 
             - name: Build APK
-              run: ./gradlew assembleRelease
+              run: |
+                cd ColourOfTheMonth
+                ./gradlew assembleRelease
 
             - name: Sign APK
               uses: r0adkll/sign-android-release@v1
