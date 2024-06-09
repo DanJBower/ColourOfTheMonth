@@ -1,5 +1,9 @@
 Random random = new();
-var colourCsv = File.ReadAllLines("colours.csv");
+
+const string ChangelogPath = @"ColourOfTheMonth\app\src\main\assets\changelog.csv";
+const string ColoursPath = @"ColourOfTheMonth\app\src\main\assets\colours.csv";
+
+var colourCsv = File.ReadAllLines(ColoursPath);
 var colours = colourCsv.Skip(1).Select(line =>
     new Colour
     {
@@ -8,7 +12,7 @@ var colours = colourCsv.Skip(1).Select(line =>
     }).ToList();
 var colourDictionary = colours.ToDictionary(colour => colour.Name);
 
-var changelogCsv = File.ReadAllLines("changelog.csv");
+var changelogCsv = File.ReadAllLines(ChangelogPath);
 var changelog = changelogCsv.Skip(1).Select(line =>
     new History
     {
@@ -43,7 +47,7 @@ foreach (var history in changelog)
     newCsv.AppendLine($"{history.Date},{history.Colour.Name}");
 }
 
-File.WriteAllText("changelog.csv", newCsv.ToString());
+File.WriteAllText(@ChangelogPath, newCsv.ToString());
 
 WriteLine($"{releaseDate}: {selectedColour}");
 
