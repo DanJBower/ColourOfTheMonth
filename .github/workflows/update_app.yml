@@ -15,12 +15,11 @@ jobs:
               with:
                   ref: ${{ github.ref }}
 
-            - name: Echo run info
-              id: run_info
-              run: |
-                  echo Run ID $GITHUB_RUN_ID
-                  echo Run number $GITHUB_RUN_NUMBER
-                  echo Run attempt $GITHUB_RUN_ATTEMPT
+            - name: Setup .NET
+              uses: actions/setup-dotnet@v4.0.0
 
-            - name: Update
-              run: echo Updating app!
+            - name: Restore .NET Tools
+              run: dotnet tool restore
+
+            - name: Update Icon
+              run: dotnet dotnet-script update_icon.csx
