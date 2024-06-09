@@ -7,7 +7,7 @@ on:
 
 jobs:
     UpdateColour:
-        name: Update App
+        name: Build App
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
@@ -26,3 +26,57 @@ jobs:
 
             - name: Update Icon
               run: dotnet dotnet-script update_version.csx
+
+            - name: Setup Java JDK
+              uses: actions/setup-java@v4.2.1
+              with:
+                distribution: 'temurin'
+                java-version: '21'
+
+            - name: Make gradlew executable
+              run: chmod +x ./gradlew
+
+            - name: Setup Gradle Cache
+              uses: gradle/actions/setup-gradle@v3
+              with:
+                gradle-home-cache-cleanup: true
+
+            - name: Build AAB
+              run: ./gradlew bundleRelease
+
+            - name: Sign AAB
+              uses: r0adkll/sign-android-release@v1
+              id: sign_app_aab
+              with:
+                releaseDirectory: app/build/outputs/bundle/release
+                signingKeyBase64: ${{ secrets.KEYSTORE }}
+                alias: ${{ secrets.SIGNING_KEY_ALIAS }}
+                keyStorePassword: ${{ secrets.SIGNING_STORE_PASSWORD }}
+                keyPassword: ${{ secrets.SIGNING_KEY_PASSWORD }}
+
+            - name: Upload Signed AAB
+              uses: actions/upload-artifact@v4.3.3
+              with:
+                name: app-bundle
+                path: ${{steps.sign_app_aab.outputs.signedReleaseFile}}
+                retention-days: 32
+
+            - name: Build APK
+              run: ./gradlew assembleRelease
+
+            - name: Sign APK
+              uses: r0adkll/sign-android-release@v1
+              id: sign_app_apk
+              with:
+                releaseDirectory: app/build/outputs/apk/release
+                signingKeyBase64: ${{ secrets.KEYSTORE }}
+                alias: ${{ secrets.SIGNING_KEY_ALIAS }}
+                keyStorePassword: ${{ secrets.SIGNING_STORE_PASSWORD }}
+                keyPassword: ${{ secrets.SIGNING_KEY_PASSWORD }}
+
+            - name: Upload Signed APK
+              uses: actions/upload-artifact@v4.3.3
+              with:
+                name: apk
+                path: ${{steps.sign_app_apk.outputs.signedReleaseFile}}
+                retention-days: 32
