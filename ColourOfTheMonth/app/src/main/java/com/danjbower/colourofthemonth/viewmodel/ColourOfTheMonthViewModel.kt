@@ -1,11 +1,14 @@
 package com.danjbower.colourofthemonth.viewmodel
 
+import android.graphics.Color
+import androidx.core.graphics.ColorUtils
 import androidx.lifecycle.ViewModel
 import com.danjbower.colourofthemonth.data.Colour
 import com.danjbower.colourofthemonth.model.ColourOfTheMonthModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlin.math.roundToInt
 
 class ColourOfTheMonthViewModel : ViewModel
 {
@@ -61,12 +64,13 @@ class ColourOfTheMonthViewModel : ViewModel
 
     fun getColourInfo(colour: Colour): ColourInfo
     {
+        val rgb = getRGB(colour.hex)
         return ColourInfo(
             name = colour.name,
             hex = colour.hex,
-            rgb = getRGB(colour.hex),
-            hsl = HSL(0,0,0),
-            hsv = HSV(0,0,0),
+            rgb = rgb,
+            hsl = getHSL(rgb),
+            hsv = getHSV(rgb),
         )
     }
 
@@ -79,14 +83,26 @@ class ColourOfTheMonthViewModel : ViewModel
         )
     }
 
-    fun getHSL(colour: Colour): HSL
+    fun getHSL(rgb: RGB): HSL
     {
-        return HSL(0,0,0)
+        var arr = FloatArray(3)
+        ColorUtils.RGBToHSL(rgb.r, rgb.g, rgb.b, arr)
+        return HSL(
+            arr[0].roundToInt(),
+            (arr[1] * 100).roundToInt(),
+            (arr[2] * 100).roundToInt(),
+        )
     }
 
-    fun getHSV(colour: Colour): HSV
+    fun getHSV(rgb: RGB): HSV
     {
-        return HSV(0,0,0)
+        var arr = FloatArray(3)
+        Color.RGBToHSV(rgb.r, rgb.g, rgb.b, arr)
+        return HSV(
+            arr[0].roundToInt(),
+            (arr[1] * 100).roundToInt(),
+            (arr[2] * 100).roundToInt(),
+        )
     }
 
     fun update(newState: ViewState) {
