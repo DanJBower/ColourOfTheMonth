@@ -55,6 +55,8 @@ jobs:
                 alias: ${{ secrets.SIGNING_KEY_ALIAS }}
                 keyStorePassword: ${{ secrets.SIGNING_STORE_PASSWORD }}
                 keyPassword: ${{ secrets.SIGNING_KEY_PASSWORD }}
+              env:
+                BUILD_TOOLS_VERSION: "34.0.0"
 
             - name: Upload Signed AAB
               uses: actions/upload-artifact@v4.3.3
@@ -77,6 +79,8 @@ jobs:
                 alias: ${{ secrets.SIGNING_KEY_ALIAS }}
                 keyStorePassword: ${{ secrets.SIGNING_STORE_PASSWORD }}
                 keyPassword: ${{ secrets.SIGNING_KEY_PASSWORD }}
+              env:
+                BUILD_TOOLS_VERSION: "34.0.0"
 
             - name: Upload Signed APK
               uses: actions/upload-artifact@v4.3.3
