@@ -23,3 +23,6 @@ jobs:
 
             - name: Update Icon
               run: dotnet dotnet-script update_icon.csx
+
+            - name: Update Icon
+              run: dotnet dotnet-script update_version.csx
