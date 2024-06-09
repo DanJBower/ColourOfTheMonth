@@ -36,10 +36,13 @@ jobs:
             - name: Make gradlew executable
               run: chmod +x ColourOfTheMonth/gradlew
 
-            - name: Setup Gradle Cache
+            - name: Setup Gradle
               uses: gradle/actions/setup-gradle@v3
               with:
                 gradle-home-cache-cleanup: true
+                build-scan-publish: true
+                build-scan-terms-of-use-url: "https://gradle.com/terms-of-service"
+                build-scan-terms-of-use-agree: "yes"
 
             - name: Build AAB
               run: |
