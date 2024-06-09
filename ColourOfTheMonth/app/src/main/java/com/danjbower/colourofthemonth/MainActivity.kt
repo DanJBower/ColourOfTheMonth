@@ -15,8 +15,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             val model = ColourOfTheMonthModel(
-                readFileFromAssets(this, "colours.txt"),
-                readFileFromAssets(this, "changelog.txt"),
+                readFileFromAssets(this, "colours.csv"),
+                readFileFromAssets(this, "changelog.csv"),
             )
             val viewModel = ColourOfTheMonthViewModel(model)
             ColourOfTheMonth(viewModel)

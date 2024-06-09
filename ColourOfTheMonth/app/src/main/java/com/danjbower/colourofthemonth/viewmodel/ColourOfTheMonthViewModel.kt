@@ -22,6 +22,7 @@ class ColourOfTheMonthViewModel : ViewModel
         _viewState = MutableStateFlow(ViewState(
             currentDate = _model.currentChange.date,
             currentColourInfo = getColourInfo(_model.currentChange.colour),
+            showExtraDetail = false,
         ))
         viewState = _viewState.asStateFlow()
     }
@@ -30,6 +31,7 @@ class ColourOfTheMonthViewModel : ViewModel
     (
         val currentDate: String,
         val currentColourInfo: ColourInfo,
+        val showExtraDetail: Boolean,
     )
 
     data class ColourInfo
@@ -105,7 +107,10 @@ class ColourOfTheMonthViewModel : ViewModel
         )
     }
 
-    fun update(newState: ViewState) {
-        _viewState.value = newState
+    fun toggleInfoDetail() {
+        val state = _viewState.value;
+        _viewState.value = state.copy(
+            showExtraDetail = !state.showExtraDetail
+        )
     }
 }
