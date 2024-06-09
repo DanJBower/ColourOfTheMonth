@@ -34,7 +34,7 @@ jobs:
                 java-version: '21'
 
             - name: Make gradlew executable
-              run: gradle wrapper
+              run: chmod +x ColourOfTheMonth/gradlew
 
             - name: Setup Gradle Cache
               uses: gradle/actions/setup-gradle@v3
@@ -42,13 +42,13 @@ jobs:
                 gradle-home-cache-cleanup: true
 
             - name: Build AAB
-              run: ./gradlew bundleRelease
+              run: ColourOfTheMonth/gradlew bundleRelease
 
             - name: Sign AAB
               uses: r0adkll/sign-android-release@v1
               id: sign_app_aab
               with:
-                releaseDirectory: app/build/outputs/bundle/release
+                releaseDirectory: ColourOfTheMonth/app/build/outputs/bundle/release
                 signingKeyBase64: ${{ secrets.KEYSTORE }}
                 alias: ${{ secrets.SIGNING_KEY_ALIAS }}
                 keyStorePassword: ${{ secrets.SIGNING_STORE_PASSWORD }}
@@ -68,7 +68,7 @@ jobs:
               uses: r0adkll/sign-android-release@v1
               id: sign_app_apk
               with:
-                releaseDirectory: app/build/outputs/apk/release
+                releaseDirectory: ColourOfTheMonth/app/build/outputs/apk/release
                 signingKeyBase64: ${{ secrets.KEYSTORE }}
                 alias: ${{ secrets.SIGNING_KEY_ALIAS }}
                 keyStorePassword: ${{ secrets.SIGNING_STORE_PASSWORD }}
