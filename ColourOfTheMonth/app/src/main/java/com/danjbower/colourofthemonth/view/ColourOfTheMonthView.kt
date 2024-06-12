@@ -4,17 +4,21 @@ import android.content.res.Configuration
 import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.detectTapGestures
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.requiredWidthIn
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentSize
+import androidx.compose.foundation.layout.wrapContentWidth
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.items
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -24,7 +28,6 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.pointer.pointerInput
-import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.danjbower.colourofthemonth.model.ColourOfTheMonthModel
@@ -49,6 +52,7 @@ fun ColourOfTheMonthPreview()
     )
     val viewModel = ColourOfTheMonthViewModel(model)
     viewModel.toggleInfoDetail()
+    viewModel.toggleChangelog()
     ColourOfTheMonth(viewModel)
 }
 
@@ -64,6 +68,9 @@ fun ColourOfTheMonth(viewModel: ColourOfTheMonthViewModel)
                 detectTapGestures(
                     onTap = {
                         viewModel.toggleInfoDetail()
+                    },
+                    onLongPress = {
+                        viewModel.toggleChangelog()
                     }
                 )
             },
@@ -85,51 +92,31 @@ fun ColourOfTheMonth(viewModel: ColourOfTheMonthViewModel)
                     .shadow(8.dp, RoundedCornerShape(10.dp))
                     .clip(RoundedCornerShape(10.dp))
                     .background(MaterialTheme.colorScheme.background)
+                    .animateContentSize(),
+                    contentAlignment = Alignment.Center,
                 )
                 {
-                    ColourCard(
-                        date = viewState.currentDate,
-                        colourInfo = viewState.currentColourInfo,
-                        showExtraDetails = viewState.showExtraDetail,
-                    )
+                    if (viewState.showChangelog)
+                    {
+                        Column(
+                            modifier = Modifier
+                                .verticalScroll(rememberScrollState())
+                        ) {
+                            viewState.changeLog.forEach { historyViewModel ->
+                                HistoryCard(historyViewModel)
+                            }
+                        }
+                    }
+                    else
+                    {
+                        ColourCard(
+                            date = viewState.currentDate,
+                            colourInfo = viewState.currentColourInfo,
+                            showExtraDetails = viewState.showExtraDetail,
+                        )
+                    }
                 }
             }
-        }
-    }
-}
-
-@Composable
-fun ColourCard(
-    date: String,
-    colourInfo: ColourOfTheMonthViewModel.ColourInfo,
-    showExtraDetails: Boolean,
-)
-{
-    val configuration = LocalConfiguration.current
-    val screenWidth = configuration.screenWidthDp.dp
-    val minWidth = screenWidth * 0.7f
-
-    Column(
-        modifier = Modifier
-            .requiredWidthIn(min = minWidth)
-            .animateContentSize()
-            .padding(all = 10.dp),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally,
-    )
-    {
-        Text(
-            text = date,
-            color = MaterialTheme.colorScheme.secondary,
-        )
-        Text(text = colourInfo.name)
-
-        if (showExtraDetails)
-        {
-            Text(text = "Hex: ${colourInfo.hex}")
-            Text(text = "R: ${colourInfo.rgb.r} G: ${colourInfo.rgb.g} B: ${colourInfo.rgb.b}")
-            Text(text = "H: ${colourInfo.hsl.h}° S: ${colourInfo.hsl.s}% L: ${colourInfo.hsl.l}%")
-            Text(text = "H: ${colourInfo.hsv.h}° S: ${colourInfo.hsv.s}% V: ${colourInfo.hsv.v}%")
         }
     }
 }
