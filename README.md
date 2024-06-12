@@ -18,3 +18,13 @@ I'm not going to lie, I created this app to prevent my Android developer account
   * Card should be tappable to expand and show the same expanded information
   * Long press will close changelog
 * Implement uploading to Play Store as per job 2 on <https://medium.com/@vontonnie/automating-success-github-actions-workflow-for-android-app-deployment-908095d53b97>
+  * releaseFile - aab
+  * serviceAccountJsonPlainText - secret
+  * packageName - just copy it
+  * track - production
+  * inAppUpdatePriority - 5
+  * userFraction - 1.0
+  * status - completed
+  * whatsNewDirectory - Work this out
+  * mappingFile - look into how to set this up
+  * nativeDebugSymbols - look into if this is needed
