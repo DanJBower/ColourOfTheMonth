@@ -39,7 +39,7 @@ class ColourOfTheMonthViewModel : ViewModel
     )
 
     fun toggleInfoDetail() {
-        val state = _viewState.value;
+        val state = _viewState.value
         if (!state.showChangelog)
         {
             _viewState.value = state.copy(
@@ -49,7 +49,7 @@ class ColourOfTheMonthViewModel : ViewModel
     }
 
     fun toggleChangelog() {
-        val state = _viewState.value;
+        val state = _viewState.value
         _viewState.value = state.copy(
             showChangelog = !state.showChangelog
         )

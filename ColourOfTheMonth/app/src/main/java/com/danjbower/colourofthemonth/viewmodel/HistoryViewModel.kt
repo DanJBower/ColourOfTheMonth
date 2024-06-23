@@ -33,7 +33,7 @@ class HistoryViewModel : ViewModel
     )
 
     fun toggleInfoDetail() {
-        val state = _viewState.value;
+        val state = _viewState.value
         _viewState.value = state.copy(
             showExtraDetail = !state.showExtraDetail
         )
